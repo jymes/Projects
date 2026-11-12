@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#071629"/><stop offset="1" stop-color="#102d4c"/></linearGradient>
+  <linearGradient id="node" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#174d78"/><stop offset="1" stop-color="#0c2945"/></linearGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <style>
+    .title{font: bold 34px Arial;fill:#f4f8ff}.sub{font:18px Arial;fill:#a9c6df}
+    .node{fill:url(#node);stroke:#31c8f2;stroke-width:3;rx:18}
+    .label{font:bold 21px Arial;fill:#fff;text-anchor:middle}.small{font:16px Arial;fill:#c6d9ea;text-anchor:middle}
+    .line{stroke:#42d7ff;stroke-width:4;fill:none;filter:url(#glow)}
+    .dashed{stroke:#f5bd55;stroke-width:3;stroke-dasharray:10 9;fill:none}
+    .tag{font:bold 15px Arial;fill:#071629}
+  </style>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<text x="800" y="58" text-anchor="middle" class="title">SMALL BUSINESS NETWORK — PACKET TRACER DESIGN</text>
+<text x="800" y="91" text-anchor="middle" class="sub">Segmented VLAN architecture • Router-on-a-stick • DHCP • Guest isolation</text>
+
+<!-- Main links -->
+<path class="line" d="M800 235 V290"/>
+<path class="line" d="M800 395 V455 H270 V520"/>
+<path class="line" d="M800 395 V455 H800 V520"/>
+<path class="line" d="M800 455 H1330 V520"/>
+<path class="line" d="M800 455 V700 H800 V745"/>
+<path class="dashed" d="M1330 625 V690 H1090 V745"/>
+
+<!-- Internet -->
+<rect x="680" y="125" width="240" height="105" class="node"/>
+<text x="800" y="166" class="label">INTERNET / ISP</text><text x="800" y="196" class="small">Cloud / simulated WAN</text>
+<!-- Router -->
+<rect x="650" y="290" width="300" height="105" class="node"/>
+<text x="800" y="331" class="label">EDGE ROUTER</text><text x="800" y="361" class="small">R1 • 802.1Q subinterfaces • NAT</text>
+<!-- Switch -->
+<rect x="620" y="455" width="360" height="75" class="node"/>
+<text x="800" y="485" class="label">CORE ACCESS SWITCH</text><text x="800" y="510" class="small">S1 • 2960 • trunk to R1</text>
+<!-- VLAN groups -->
+<rect x="90" y="520" width="360" height="145" class="node"/>
+<text x="270" y="557" class="label">VLAN 10 — ADMIN</text><text x="270" y="590" class="small">192.168.10.0/24</text><text x="270" y="620" class="small">Admin PCs • Network printer</text>
+<rect x="620" y="520" width="360" height="145" class="node"/>
+<text x="800" y="557" class="label">VLAN 20 — SALES</text><text x="800" y="590" class="small">192.168.20.0/24</text><text x="800" y="620" class="small">Sales PCs • Shared services</text>
+<rect x="1150" y="520" width="360" height="145" class="node"/>
+<text x="1330" y="557" class="label">VLAN 30 — IT</text><text x="1330" y="590" class="small">192.168.30.0/24</text><text x="1330" y="620" class="small">IT workstation • Management</text>
+<!-- Server and guest -->
+<rect x="620" y="745" width="360" height="110" class="node"/>
+<text x="800" y="785" class="label">VLAN 40 — SERVERS</text><text x="800" y="818" class="small">192.168.40.0/24 • DNS / File server</text>
+<rect x="1090" y="745" width="420" height="110" class="node"/>
+<text x="1300" y="785" class="label">VLAN 50 — GUEST WI-FI</text><text x="1300" y="818" class="small">192.168.50.0/24 • Internet only</text>
+<text x="1095" y="710" class="small">Wireless access point</text>
+<text x="800" y="885" text-anchor="middle" class="sub">Logical design illustration — build and validate the topology in Cisco Packet Tracer</text>
+</svg>
